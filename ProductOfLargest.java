@@ -6,7 +6,7 @@ public class Hello {
 		String charinp = sc.nextLine();
 		String [] splitinp = charinp.split("");
 		int [] inp = new int[charinp.length()];
-		int max=0,smax=0,i;
+		int max=0,smax=0,i,j;
 		for(i=0;i<charinp.length();i++)
 		{
 		    inp[i] = Integer.parseInt(splitinp[i]);
