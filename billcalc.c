@@ -4,22 +4,26 @@
 
 int main()
 {
-    char inp[100];
+    char inp[1000];
     int i,len,sum=0,temp=0,x,c=0;
-    scanf("%s%n",inp,&len);
+    scanf("%[^\n]%n",inp,&len);
+    printf("\n%s \n%d",inp,len);
     for(i=len-1;i>-1;i--)
     {
-        if(isalpha(inp[i]))
-        {
-            sum+=temp;
-            temp = c = 0;
-        }
-        else
+        if(isdigit(inp[i]))
         {
             x = inp[i] - '0';
             c++;
             temp = temp + pow(10,c-1)*x;
+            //printf("temp : %d  %c\n",temp,inp[i]);
+            }
+        else
+        {
+            sum+=temp;
+            //printf("Sum %d  %d %c \n",sum,temp,inp[i]);
+            temp = c = 0;
         }
     }
-    printf("%d",sum);
+    sum+=temp;
+    printf("\n%d",sum);
 }
