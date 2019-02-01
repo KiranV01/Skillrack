@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int flag = 0;
+
+int main()
+{
+    long long int n,x,i,temp;
+    scanf("%lld %lld",&n,&x);
+    for(i=0;i<n;i++)
+    {
+        scanf("%lld",&temp);
+        printer(temp,x);
+    }
+    if(flag==0)
+        printf("-1");
+}
+
+void printer(long long int a,long long int x)
+{
+    a = (a * a)+x;
+    if(a%10 !=5 && a%10 !=6)
+    {
+        printf("%lld ",a);
+        flag=1;
+    }
+    
+}
